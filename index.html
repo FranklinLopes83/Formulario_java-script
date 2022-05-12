@@ -2,113 +2,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="css/estilo.css">
-        <title>Formulário com Bootstrap e javascript</title>
+
+    <title>Formulário com Bootstrap e Javascript</title>
 </head>
 <body class="container-fluid" style="background-color: #d2d2d2;">
-        <h1 class="text-center">Formulário com Bootstrap e javascript</h1>
-    <form action="" metod="post">
-        <!-- Campo de texto:Nome -->
+    <h1 class="text-center my-4">Formulário com Bootstrap e Javascript</h1>
+    <form action="" method="post">
+        <!-- CAMPO DE TEXTO: NOME -->
         <section class="row">
             <div class="col-md-12">
-            <label for="Nome" class="mb-2">Digite seu nome</label>
-            <input type="text" class="form-control" id="nome">
-            
-        </div>
+                <label for="nome" class="mb-2">Digite seu nome</label>
+                <input type="text" class="form-control" id="nome">
+            </div>
         </section>
 
-        <!-- Campo de texto e e-mail -->
-            <section class="row mt-3">
+        <!-- CAMPO DE TEXTO E EMAIL: ENDEREÇO E EMAIL -->
+        <section class="row mt-3">
             <div class="col-md-6">
                 <label for="endereco" class="mb-2">Qual o seu endereço?</label>
                 <input type="text" id="endereco" class="form-control">
             </div>
+
             <div class="col-md-6">
-                <label for="email" class="mb-2">Qual o seu e-mail?</label>
+                <label for="email" class="mb-2">Qual o seu email? </label>
                 <input type="email" class="form-control" id="email">
-                <small id="validarEmail"></small>
+                <small id="validaEmail"></small>
             </div>
-               
+            
         </section>
 
-        <!-- texto apenas para leitura -->
+        <!-- CAMPO DE TEXTO SOMENTE LEITURA, NÃO PODE DIGITAR -->
         <section class="row mt-3">
             <div class="col-md-12">
-                <label for="apenas" class="mb-2">Apenas leitura</label>
-                <input type="text" class="form-control" placeholder="apenas leitura" id="apenas" readonly>
+                <label for="" class="mb-2">Apenas Leitura</label>
+                <input type="text" class="form-control" placeholder="Apenas Leitura" readonly>
             </div>
         </section>
 
-        <!-- Campo de senha -->
-
-            <section class="row mt-3">
-            <div class="input-group md-12">
-                <label for="senha" class="input-group-text col-form-label">Informe a sua senha</label>
-                <input type="password" class="form-control" id="senha">
-                <span class="material-symbols-outlined btn btn-primary">
-                    visibility
-                </span>
+        <!-- CAMPO DE SENHA -->
+        <section class="row mt-3">
+            <div class="input-group col-md-12">
+                <label for="senha" class="input-group-text col-form-label">Informe sua senha: </label>
+                <input type="password" id="senha" class="form-control">
+                <span class="material-symbols-outlined btn btn-primary">visibility_off</span>
             </div>
-
         </section>
 
-        <!-- Campo de Rádio -->
+        <!-- CAMPO DE RADIO -->
+        <section class="row mt-3">
+            <label class="col-form-label-lg">Qual o seu nível de escolaridade?</label>
 
-            <section class="row mt-3">
-                <label class="col-form-label-lg">Qual o seu nivél de escolaridade</label>
+            <div>
+                <input type="radio" id="fundamental" class="form-check-input" value="fundamental" name="escolaridade">
+                <label for="fundamental" class="form-check-label ps-2">Fundamental</label>                
+            </div>  
+            <div>
+                <input type="radio" id="medio" class="form-check-input" value="medio" name="escolaridade">
+                <label for="medio" class="form-check-label ps-2">Médio</label>                
+            </div>  
+            <div>
+                <input type="radio" id="superior" class="form-check-input" value="superior" name="escolaridade">
+                <label for="superior" class="form-check-label ps-2">Superior</label>                
+            </div>  
+        </section>
+        <button class="btn btn-primary col-12 mt-3" id="btnEscolaridade">Verificar Escolaridade</button>
+    
+        <!-- CAMPO CHECKBOX: SWITCH -->
+        <section class="alert alert-warning mt-3">
+            <p>Você aceita os termos do contrato?</p>
+        </section>
 
-                <div>
-                    <input type="radio" id="fundamental" class="form-check-input" value="fundamental" name="escolaridade">
-                    <label for="fundamental" class="form-check-label  ps-2">Fundamental</label>
-                </div>
-                <div>
-                    <input type="radio" id="Médio" class="form-check-input" value="Médio" name="escolaridade">
-                    <label for="Médio" class="form-check-label  ps-2">Médio</label>
-                </div>
-                <div>
-                    <input type="radio" id="Superior" class="form-check-input" value="Superior" name="escolaridade">
-                    <label for="Superior" class="form-check-label ps-2">Superior</label>
-                </div> 
-            </section>
+        <section class="form-check form-switch">
+            <input type="checkbox" name="escolha" id="escolha" value="escolha" class="form-check-input">
+            <label for="escolha" class="form-check-label">Exibir termos do contrato</label>
+        </section>
 
-                <button class="btn btn-primary col-12 mt-3">VERIFICAR ESCOLARIDADE</button>
+        <!-- INFO DO CONTRATO -->
+        <section class="bg-light p-5 mt-3" id="contrato" >
+            <div class="container-fluid">
+                <h1 class="fw-bold mb-2">Termos do Contrato</h1>
+                <p class="fs-5 lead altura">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi expedita vero hic eos eum, vitae a saepe nesciunt veniam qui eligendi autem nulla esse molestiae ducimus cum exercitationem sed animi.
+                    Sint dolor minima, nesciunt quam exercitationem sed. Nobis beatae nemo totam architecto autem fuga fugit cum. Est omnis fuga suscipit accusamus dignissimos error eaque, quasi optio alias. Natus, voluptates porro.
+                    Explicabo tempore dicta amet veniam ad magni vero deleniti unde repellat laboriosam illum cumque rem, aspernatur repudiandae dolores quam quod natus? Quidem enim illo beatae numquam ipsum voluptatem repellat dicta.
+                    Natus neque, ut sequi obcaecati atque debitis ad expedita adipisci voluptates doloribus quidem sunt qui quas facere alias tempora consectetur eos nulla assumenda autem provident ea. Minus, officiis. Tempore, eligendi.
+                    Aliquam atque dolor, similique nulla nesciunt facilis eum eos reiciendis cupiditate labore. Veniam, fuga expedita odit quisquam soluta qui, delectus error accusantium facilis sunt eos et distinctio quidem unde officiis.
+                    At atque veritatis aperiam architecto beatae odit, facere illo sint fugiat inventore doloremque ratione nostrum similique necessitatibus placeat deserunt expedita cupiditate tempore quisquam. Impedit quaerat nam voluptatum aperiam voluptate cum?
+                    Repellendus eligendi, quasi error quam veniam molestias eaque, iste, corrupti aspernatur quae hic suscipit eum! Sint velit eum fuga officiis enim, recusandae nemo modi non vero magnam quasi exercitationem nesciunt.
+                    Illum eos sint harum non praesentium corrupti maxime repudiandae, consectetur veniam debitis ullam commodi enim aut ut nemo. Debitis magni possimus quae! Reprehenderit, repellendus adipisci quae voluptatem quibusdam enim dolor.
+                    Laborum, illum ratione! Maiores officiis voluptate officia, saepe enim nisi repellat a labore nemo exercitationem voluptatibus est mollitia dolorum dolore numquam aliquam ullam qui, atque iusto consequatur. Quibusdam, impedit eveniet.
+                    Dicta quo officiis fugit at. Veniam numquam similique ipsa ipsum iure, consectetur atque aut laudantium. Architecto dolores suscipit porro, deleniti nisi error sapiente cumque modi doloribus maxime, sequi molestias ea.
+                </p>
+                <hr>
 
-                <!-- Campo CheckBox:swith -->
-                <section class="alert alert-warning mt-3" >
-                    <p>VOCÊ ACEITA OS TERMOS DE CONTRATO</P>
+                <section class="form-check">
+                    <input type="checkbox" name="concordo" id="concordo" value="concordo" class="form-check-input">
+                    <label for="concordo" class="form-check-label">Concordo</label>
                 </section>
 
-                <SECtion class="form-check form-switch">
-                   <input type="checkbox" name="escolha" id="escolha" value="escolha" class="form-check-input">
-                   <label for="escolha" class="form-check-label" >Exibir termos de contrato</label>
-                </SECtion>
-
-                <!-- Info do Contrato -->
-                <section class="bg-light p-5 mi-3 " id="contrato">
-                    <div class="container0fluid">
-                        <h1 class="fw-bold mb-2">TERMOS DO CONTRATO</h1>
-                        <p class="fs-5 lead altura">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus sequi non soluta ad cumque fugiat ducimus blanditiis! Soluta, doloribus aut et amet nihil quam eveniet necessitatibus maiores voluptate sequi vero?
-                        Molestiae nihil eos odio ratione consequuntur doloribus tempore cumque itaque quod, vero dignissimos officia ab accusamus aliquam quos? Exercitationem, optio suscipit enim dolor aut possimus similique officiis pariatur tenetur praesentium.
-                        Ea ullam dicta rerum illo harum molestias unde. Praesentium assumenda quos dignissimos quo? Cupiditate aliquam quod laudantium, incidunt odio sint laborum, quas illum, accusamus tenetur cumque dolorum voluptatum ab nemo!
-                        Repellendus aut expedita voluptatum at quibusdam, eligendi assumenda facilis. Veritatis praesentium sequi aliquam id nisi corporis similique repellendus placeat fugit sunt dolorum, veniam libero eaque ut nulla quis iste deleniti?
-                        Cupiditate earum ut voluptatem officiis molestias, ullam quae nam necessitatibus eveniet recusandae suscipit, repellendus architecto! Ipsum dicta tenetur consequatur reprehenderit quis molestias ipsa voluptatibus, rem veritatis exercitationem repudiandae deserunt fugit.
-                        Eligendi, tenetur vel? Doloribus vero dolorem nisi. Quam sapiente minima cupiditate voluptatum quia odit dignissimos. Totam exercitationem sequi magni ipsam et repellat cupiditate eaque molestiae laudantium nulla. Ex, corrupti modi.
-                        Nobis tempora laboriosam quidem ad enim placeat reprehenderit facilis mollitia omnis, quas fugiat cupiditate praesentium expedita sapiente! Labore mollitia accusamus, aliquam magnam maiores illo autem ab molestias itaque, ipsa at?
-                        Totam nobis nostrum sint consequuntur asperiores debitis aliquid dolorem recusandae beatae magni? Alias natus expedita rem aut ea vel ex placeat obcaecati dicta quaerat illum ipsam qui, fuga consectetur. Sequi!
-                        Illo aliquid labore deserunt, aperiam provident molestias et repellat est exercitationem quidem ad, ipsum delectus ab distinctio ullam vitae eius similique iste alias veritatis omnis sed quae architecto. Eveniet, aspernatur.
-                        Sed sapiente esse sunt soluta facilis ab illo autem tempore et veniam. Quis sed, sit, est labore possimus laboriosam aliquid praesentium consequatur eum, alias velit esse facilis nihil repudiandae temporibus.</p>
-                            <hr>
-                            <SECtion class="form-check">
-                   <input type="checkbox" name="Concordo" id="Concordo" value="Concordo" class="form-check-input">
-                   <label for="Concordo" class="form-check-label" >Concordo</label>
-                </SECtion>
-
-                
-                    </div>
-                    </section>
+            </div>
+        </section>
     </form>
 
     <script src="js/script.js"></script>
